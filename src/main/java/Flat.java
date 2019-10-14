@@ -1,19 +1,19 @@
 public class Flat {
-    private int area;
+    private double area;
     private int numberOfRooms;
 
     private final static int DEFAULT_NUMBER_OF_ROOMS = 2;
-    private final static int DEFAULT_AREA = 50;
+    private final static double DEFAULT_AREA = 50.0;
 
     public Flat() {
         this(DEFAULT_AREA, DEFAULT_NUMBER_OF_ROOMS);
     }
 
-    public Flat(int area) {
+    public Flat(double area) {
         this(area, DEFAULT_NUMBER_OF_ROOMS);
     }
 
-    public Flat(int area, int numberOfRooms) {
+    public Flat(double area, int numberOfRooms) {
         this.area = area;
         this.numberOfRooms = numberOfRooms;
     }
@@ -32,5 +32,14 @@ public class Flat {
 
     public void setNumberOfRooms(int numberOfRooms) {
         this.numberOfRooms = numberOfRooms;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Flat{");
+        sb.append("area=").append(area);
+        sb.append(", numberOfRooms=").append(numberOfRooms);
+        sb.append('}');
+        return sb.toString();
     }
 }
